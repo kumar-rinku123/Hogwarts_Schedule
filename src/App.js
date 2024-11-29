@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { TEACHERS } from "./constants/teachers";
+import { INITIAL_SCHEDULE } from "./constants/schedule";
+import { handleAttendanceChange } from "./utils/attendanceUtils";
+import { getTeacherForStudent } from "./utils/teacherUtils";
+import AttendanceTable from "./components/AttendanceTable";
+import ScheduleTable from "./components/ScheduleTable";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [attendance, setAttendance] = useState(TEACHERS);
+  const [schedule] = useState(INITIAL_SCHEDULE);
+
+  const onAttendanceChange = (teacher, value) => {
+    setAttendance(handleAttendanceChange(attendance, teacher, value));
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="Schedule-test">Schedule Today</h1>
+      <div className="container">
+        <AttendanceTable
+          attendance={attendance}
+          onAttendanceChange={onAttendanceChange}
+        />
+        <ScheduleTable
+          schedule={schedule}
+          getTeacherForStudent={(student) =>
+            getTeacherForStudent(attendance, student, schedule)
+          }
+        />
+      </div>
     </div>
   );
-}
+};
 
 export default App;

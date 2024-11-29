@@ -1,38 +1,97 @@
 .App {
-  text-align: center;
+  font-family: Arial, sans-serif;
+  width: 95%;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+
 }
 
-.App-header {
-  background-color: #282c34;
+body {
+  background-image: linear-gradient(#f4355f, #5931a6);
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%;
+
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table thead {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+table thead th {
+  padding: 20px 35px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+table tbody td {
+  padding: 15px 35px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+select {
+  padding: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.attendance {
+  width: 50%;
+  background-color: #27bca7;
+  padding: 30px 0;
+}
+
+.schedule {
+  width: 50%;
+  background-color: #27bca7;
+  padding: 30px 0;
+}
+
+.attendance h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 30px;
+  color: white;
+}
+
+.schedule h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 30px;
+  color: white;
+}
+
+.Schedule-test {
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  margin-bottom: 40px;
 }
