@@ -16,7 +16,7 @@ const ScheduleTable = ({ schedule, getTeacherForStudent }) => (
           <tr key={entry.student}>
             <td>{entry.student}</td>
             <td>{entry.subject}</td>
-            <td>{getTeacherForStudent(entry.student)}</td>
+            <td className={getTeacherForStudent(entry.student) === "Not Assigned" ? "not-assigned-teacher" : ""}>{getTeacherForStudent(entry.student)}</td>
           </tr>
         ))}
       </tbody>

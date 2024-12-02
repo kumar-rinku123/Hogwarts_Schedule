@@ -95,3 +95,7 @@ select {
   font-size: 50px;
   margin-bottom: 40px;
 }
+
+.not-assigned-teacher {
+  color: red;
+}
